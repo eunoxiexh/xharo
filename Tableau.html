@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tableau N°1 – Structure ENEAM</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: #f0f4ff;
+      font-family: 'Inter', sans-serif;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: 15px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: #6b7280;
+      margin-bottom: 28px;
+    }
+
+    .box-eneam {
+      position: relative;
+      width: 520px;
+      background: linear-gradient(135deg, #fde8d8 0%, #fbd5b5 100%);
+      border: 2.5px solid #e8753a;
+      border-radius: 16px;
+      padding: 0 0 28px 0;
+      box-shadow: 0 8px 32px rgba(232,117,58,.18);
+    }
+
+    .label-eneam {
+      font-family: 'Syne', sans-serif;
+      font-size: 26px;
+      font-weight: 800;
+      color: #1e2255;
+      text-align: center;
+      padding: 22px 0 18px;
+      letter-spacing: .06em;
+    }
+
+    .row-mid {
+      display: flex;
+      align-items: stretch;
+      padding: 0 20px;
+    }
+
+    .side-label {
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 6px;
+      border-radius: 8px 0 0 8px;
+      min-width: 36px;
+    }
+
+    .side-epac {
+      color: #1e2255;
+      background: rgba(255,255,255,.35);
+      border: 1.5px solid rgba(232,117,58,.4);
+      border-right: none;
+    }
+
+    .box-epac {
+      flex: 1;
+      border: 2px solid #e8753a;
+      border-radius: 0 12px 12px 0;
+      background: rgba(255,255,255,.22);
+      display: flex;
+      flex-direction: column;
+      padding: 16px;
+      gap: 14px;
+    }
+
+    .row-inner {
+      display: flex;
+      align-items: stretch;
+      gap: 12px;
+    }
+
+    .side-flash {
+      color: #92400e;
+      background: rgba(255,200,100,.25);
+      border: 1.5px solid #f59e0b;
+      border-radius: 8px;
+      min-width: 32px;
+      font-size: 11px;
+    }
+
+    .box-ig {
+      flex: 1;
+      background: linear-gradient(160deg, #06b6d4 0%, #0284c7 100%);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 160px;
+      box-shadow: 0 4px 20px rgba(6,182,212,.35);
+    }
+
+    .label-ig {
+      font-family: 'Syne', sans-serif;
+      font-size: 28px;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: .08em;
+    }
+
+    .box-claude {
+      flex: 1;
+      border: 1.5px dashed #f59e0b;
+      border-radius: 10px;
+      background: repeating-linear-gradient(
+        -45deg,
+        transparent, transparent 6px,
+        rgba(245,158,11,.07) 6px,
+        rgba(245,158,11,.07) 12px
+      );
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .label-claude {
+      font-size: 13px;
+      font-weight: 600;
+      color: #92400e;
+      letter-spacing: .08em;
+    }
+
+    .box-programmation {
+      border: 1.5px solid #f59e0b;
+      border-radius: 10px;
+      background: rgba(254,243,199,.55);
+      padding: 10px 0;
+      text-align: center;
+    }
+
+    .label-programmation {
+      font-family: 'Syne', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: #92400e;
+    }
+
+    .legend {
+      margin-top: 28px;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 12px;
+      color: #6b7280;
+    }
+    .legend-dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Tableau N°1</h1>
+
+  <div class="box-eneam">
+    <div class="label-eneam">ENEAM</div>
+    <div class="row-mid">
+      <div class="side-label side-epac">EPAC</div>
+      <div class="box-epac">
+        <div class="row-inner">
+          <div class="side-label side-flash">Flash</div>
+          <div class="box-ig">
+            <span class="label-ig">IG</span>
+          </div>
+          <div class="box-claude">
+            <span class="label-claude">claude</span>
+          </div>
+        </div>
+        <div class="box-programmation">
+          <span class="label-programmation">Programmation</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="legend">
+    <div class="legend-item">
+      <div class="legend-dot" style="background:#e8753a"></div>
+      ENEAM
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot" style="background:#e8753a;opacity:.5"></div>
+      EPAC
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot" style="background:#06b6d4"></div>
+      IG
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot" style="background:#f59e0b"></div>
+      Programmation / Flash / Claude
+    </div>
+  </div>
+
+</body>
+</html>

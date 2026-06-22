@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CV – Comlan Eunoxie Bonnaventure TOGNISSE</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink:    #0f1117;
+      --paper:  #f7f6f2;
+      --accent: #1a56db;
+      --mid:    #5b6478;
+      --rule:   #dcdad4;
+      --white:  #ffffff;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 40px 16px;
+    }
+
+    .page {
+      width: 860px;
+      max-width: 100%;
+      background: var(--white);
+      box-shadow: 0 4px 40px rgba(0,0,0,.10);
+      display: grid;
+      grid-template-columns: 260px 1fr;
+    }
+
+    /* ── SIDEBAR ── */
+    .sidebar {
+      background: var(--ink);
+      color: var(--white);
+      padding: 48px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+    }
+
+    .photo-wrap {
+      display: flex;
+      justify-content: center;
+    }
+
+    .photo-wrap img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: top center;
+      border: 3px solid var(--accent);
+    }
+
+    .sidebar-section-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 10px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 14px;
+    }
+
+    /* Contact */
+    .contact-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .contact-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 13px;
+      line-height: 1.4;
+      color: #c9cdd8;
+    }
+    .contact-list .icon {
+      flex-shrink: 0;
+      width: 18px;
+      height: 18px;
+      fill: var(--accent);
+      margin-top: 1px;
+    }
+
+    /* Skills */
+    .skill-item { margin-bottom: 12px; }
+    .skill-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12.5px;
+      color: #c9cdd8;
+      margin-bottom: 5px;
+    }
+    .skill-bar {
+      height: 3px;
+      background: rgba(255,255,255,.12);
+      border-radius: 99px;
+    }
+    .skill-fill {
+      height: 100%;
+      background: var(--accent);
+      border-radius: 99px;
+    }
+
+    /* Languages */
+    .lang-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .lang-list li {
+      font-size: 13px;
+      color: #c9cdd8;
+      display: flex;
+      justify-content: space-between;
+    }
+    .lang-level {
+      font-size: 11px;
+      color: var(--accent);
+    }
+
+    /* ── MAIN ── */
+    .main {
+      padding: 48px 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+    }
+
+    .header .name {
+      font-family: 'Syne', sans-serif;
+      font-size: 32px;
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -.02em;
+      color: var(--ink);
+    }
+    .header .family-name { color: var(--accent); }
+    .header .role {
+      font-family: 'Syne', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-top: 6px;
+    }
+    .header-rule {
+      margin-top: 20px;
+      height: 1px;
+      background: var(--rule);
+    }
+
+    .section-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 11px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 18px;
+    }
+
+    /* Education */
+    .edu-item {
+      position: relative;
+      padding-left: 16px;
+      border-left: 2px solid var(--rule);
+      margin-bottom: 20px;
+    }
+    .edu-item::before {
+      content: '';
+      position: absolute;
+      left: -5px; top: 5px;
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+    .edu-item:last-child { margin-bottom: 0; }
+    .edu-degree {
+      font-family: 'Syne', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+    .edu-school {
+      font-size: 12.5px;
+      color: var(--mid);
+      margin-top: 2px;
+    }
+    .edu-year {
+      display: inline-block;
+      margin-top: 4px;
+      font-size: 11px;
+      font-weight: 500;
+      background: #eef2fb;
+      color: var(--accent);
+      padding: 2px 8px;
+      border-radius: 99px;
+    }
+
+    /* Projects */
+    .project-card {
+      border: 1px solid var(--rule);
+      border-radius: 6px;
+      padding: 16px 18px;
+      margin-bottom: 14px;
+      position: relative;
+      overflow: hidden;
+    }
+    .project-card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: var(--accent);
+    }
+    .project-card:last-child { margin-bottom: 0; }
+    .project-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+    .project-desc {
+      font-size: 12.5px;
+      color: var(--mid);
+      margin-top: 5px;
+      line-height: 1.6;
+    }
+
+    /* Interests */
+    .interest-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .tag {
+      font-size: 12px;
+      font-weight: 500;
+      padding: 5px 13px;
+      border-radius: 99px;
+      border: 1px solid var(--rule);
+      color: var(--mid);
+      background: var(--paper);
+    }
+
+    @media (max-width: 680px) {
+      .page { grid-template-columns: 1fr; }
+      .sidebar { padding: 32px 24px; }
+      .main { padding: 32px 24px; }
+      .header .name { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ── SIDEBAR ── -->
+  <aside class="sidebar">
+
+    <div class="photo-wrap">
+      <img src="im.PNG" alt="Photo de Comlan Eunoxie"/>
+    </div>
+
+    <!-- Contact -->
+    <div>
+      <p class="sidebar-section-title">Contact</p>
+      <ul class="contact-list">
+        <li>
+          <svg class="icon" viewBox="0 0 24 24">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/>
+          </svg>
+          Bénin
+        </li>
+        <li>
+          <svg class="icon" viewBox="0 0 24 24">
+            <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/>
+          </svg>
+          tognisseeunoxie1@email.com
+        </li>
+        <li>
+          <svg class="icon" viewBox="0 0 24 24">
+            <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/>
+          </svg>
+          +229 0156905276__ __ __ __
+        </li>
+      </ul>
+    </div>
+
+    <!-- Compétences -->
+    <div>
+      <p class="sidebar-section-title">Compétences</p>
+      <div class="skill-item">
+        <div class="skill-label"><span>No-code / Web</span><span>85%</span></div>
+        <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-label"><span>Management</span><span>75%</span></div>
+        <div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-label"><span>Copywriting</span><span>70%</span></div>
+        <div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-label"><span>Python</span><span>55%</span></div>
+        <div class="skill-bar"><div class="skill-fill" style="width:55%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-label"><span>HTML / CSS</span><span>60%</span></div>
+        <div class="skill-bar"><div class="skill-fill" style="width:60%"></div></div>
+      </div>
+    </div>
+
+    <!-- Langues -->
+    <div>
+      <p class="sidebar-section-title">Langues</p>
+      <ul class="lang-list">
+        <li><span>Français</span><span class="lang-level">Natif</span></li>
+        <li><span>ADJA</span><span class="lang-level">Natif</span></li>
+        <li><span>Fon</span><span class="lang-level">Natif</span></li>
+        <li><span>Anglais</span><span class="lang-level">Notions</span></li>
+      </ul>
+    </div>
+
+  </aside>
+
+  <!-- ── MAIN ── -->
+  <main class="main">
+
+    <div class="header">
+      <div class="name">
+        Comlan Eunoxie Bonnaventure<br/>
+        <span class="family-name">TOGNISSE</span>
+      </div>
+      <div class="role">Étudiant en Informatique de Gestion a <strong>ENEAM
+      </strong></div>
+      <div class="header-rule"></div>
+    </div>
+
+    <!-- Formation -->
+    <div>
+      <p class="section-title">Formation</p>
+      <div class="edu-item">
+        <div class="edu-degree">Diplôme de Technicien (DT)</div>
+        <div class="edu-school">Lycée Technique de Bohicon</div>
+        <span class="edu-year">Obtenu2025</span>
+      </div>
+      <div class="edu-item">
+        <div class="edu-degree">BEPC</div>
+        <div class="edu-school">complexe scolaire Catholique d'Azovè</div>
+        <span class="edu-year">Obtenu 2021</span>
+      </div>
+      <div class="edu-item">
+        <div class="edu-degree">CEP</div>
+        <div class="edu-school">complexe scolaire Catholique d'Azovè</div>
+        <span class="edu-year">Obtenu2017</span>
+      </div>
+    </div>
+
+    <!-- Projets -->
+    <div>
+      <p class="section-title">Projets</p>
+      <div class="project-card">
+        <div class="project-title">Développement Web — Site / Blog</div>
+        <div class="project-desc">Création et gestion d'un site web avec des outils no-code.</div>
+      </div>
+      <div class="project-card">
+        <div class="project-title">Copywriting & Création de contenu</div>
+        <div class="project-desc">Rédaction de textes persuasifs pour supports digitaux.</div>
+      </div>
+      <div class="project-card">
+        <div class="project-title">Gestion & Organisation de projets</div>
+        <div class="project-desc">Coordination de tâches et suivi de projets académiques.</div>
+      </div>
+    </div>
+
+    <!-- Centres d'intérêt -->
+    <div>
+      <p class="section-title">Centres d'intérêt</p>
+      <div class="interest-tags">
+        <span class="tag">Développement Web</span>
+        <span class="tag">Informatique</span>
+        <span class="tag">Entrepreneuriat</span>
+        <span class="tag">Rédaction digitale</span>
+        <span class="tag">Management</span>
+        <span class="tag">Innovation</span>
+      </div>
+    </div>
+
+  </main>
+</div>
+</body>
+</html>

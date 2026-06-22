@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulaire Étudiant</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Inscription Étudiant</h2>
+
+        <form>
+            <label>Nom :</label>
+            <input type="text" placeholder="Entrez votre nom" required>
+
+            <label>Prénom :</label>
+            <input type="text" placeholder="Entrez votre prénom" required>
+
+            <label>Email :</label>
+            <input type="email" placeholder="Entrez votre email" required>
+
+            <label>Filière :</label>
+            <select>
+                <option>Informatique de Gestion</option>
+                <option>Réseaux Informatiques</option>
+                <option>Maintenance Informatique</option>
+                <option>Génie Logiciel</option>
+            </select>
+
+            <label>Sexe :</label>
+            <div class="radio-group">
+                <input type="radio" name="sexe"> Masculin
+                <input type="radio" name="sexe"> Féminin
+            </div>
+
+            <label>Commentaire :</label>
+            <textarea rows="4" placeholder="Votre commentaire"></textarea>
+
+            <button type="submit">Envoyer</button>
+        </form>
+    </div>
+
+</body>
+</html>
